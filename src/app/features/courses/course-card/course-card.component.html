@@ -1,0 +1,21 @@
+<div class="course-card" *ngFor="let course of courses">
+  <div class="left-block">
+    <h1>{{ course.title }}</h1>
+    <p class="left-block__text">{{ course.description }}</p>
+  </div>
+  <div class="right-block">
+    <p>
+      <span class="right-block__title">Authors: </span>
+      <span *ngFor="let author of course.authors; let isLast = last">{{ author }}{{isLast ? '': ', '}}</span>
+    </p>
+    <p><span class="right-block__title">Duration: </span> {{ transformHours(course) }}</p>
+    <p><span class="right-block__title">Created: </span>{{course.creationDate | date:"dd.MM.YY"}}</p>
+    <div class="right-block__button">
+      <app-button text="Show course"></app-button>
+      <ng-container *ngIf="canEdit">
+        <app-button text="Edit" ></app-button>
+        <app-button text="Delete"></app-button>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.course-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 20px 60px;
+  margin: 10px 10px;
+  border: 2px solid rgb(0, 92, 31);
+}
+
+.left-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
+}
+
+.right-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}

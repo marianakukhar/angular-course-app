@@ -1,0 +1,23 @@
+<app-header>
+  <div class="right-block">
+    <p class="username">Dave</p>
+    <app-button [text]="buttonText" [icon]="icon"></app-button>
+  </div>
+</app-header>
+
+<app-button text="Show modal window" (click)="onShowModalWindow()"></app-button>
+
+<app-info [title]="title" [text]="infoText">
+  <app-button [text]="addNewCourseButton"></app-button>
+</app-info>
+
+<app-course-list [canEdit]="canEdit" (showCourseEvent)="showCourse($event)"></app-course-list>
+
+<app-modal-window 
+    *ngIf="showModalWindow"
+    title="Modal window title"
+    message="Modal window message"
+    okButtonText="Ok"
+    cancelButtonText="Cancel"
+    (modalEvent)="logModalResult($event)">
+</app-modal-window>

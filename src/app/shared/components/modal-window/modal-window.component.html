@@ -1,0 +1,13 @@
+<div class="modal-window">
+  <div class="modal-window__content">
+    <div class="modal-window__close-button">
+      <app-button icon="far fa-window-close" (click)="emitResult(false)"></app-button>
+    </div>
+    <h1 class="modal-window__title">{{ title }}</h1>
+    <p class="modal-window__text">{{ message }}</p>
+    <div>
+      <app-button [text]="okButtonText" (click)="emitResult(true)"></app-button>
+      <app-button [text]="cancelButtonText" (click)="emitResult(false)"></app-button>
+    </div>
+  </div>
+</div>
